@@ -1,0 +1,40 @@
+/* Desktop: drawer controls are hidden (declared here so they win over .btn, which loads earlier) */
+.menu-btn, .sidebar-close { display: none; }
+.st-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Tablet */
+@media (max-width: 1100px) {
+  :root { --sidebar-w: 232px; }
+  #view { padding: 24px 22px 56px; }
+  .dash-cols, .builder-grid { grid-template-columns: 1fr; }
+  .builder-out { position: static; }
+}
+/* Small tablet / mobile: off-canvas sidebar */
+@media (max-width: 860px) {
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { position: fixed; z-index: 90; left: 0; top: 0; width: min(300px, 86vw); transform: translateX(-102%); transition: transform .22s var(--ease); box-shadow: var(--shadow-lg); }
+  body.sidebar-open .sidebar { transform: none; }
+  body.sidebar-open .scrim { display: block; position: fixed; inset: 0; z-index: 80; background: var(--scrim); }
+  .menu-btn, .sidebar-close { display: inline-flex; }
+  .topbar { padding: 0 12px; gap: 8px; }
+  .viewer-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  #view { padding: 18px 14px 48px; }
+  h1 { font-size: 19px; }
+  .kbd-group, .hide-sm { display: none; }
+  .show-sm-only { display: inline; }
+  .search-trigger { min-width: 0; }
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prompt-grid { grid-template-columns: 1fr; }
+  .prompt-list .prompt-card { grid-template-columns: 1fr; grid-template-areas: "top" "body" "meta" "tags" "actions"; }
+  .prompt-list .pc-actions { flex-direction: row; padding-top: 10px; border-top: 1px solid var(--border); }
+  .toolbar .select { flex: 1 1 140px; }
+  .modal-backdrop { padding: 0; align-items: end; }
+  .modal { max-height: 94vh; border-radius: 14px 14px 0 0; max-width: none; }
+  .pal-backdrop { padding: 10px; align-items: start; }
+  .kv { grid-template-columns: 1fr auto; } .kv-label { grid-column: 1 / -1; }
+  #toast-root { left: 12px; right: 12px; bottom: 12px; } .toast { max-width: none; }
+  .viewer-actions .btn-danger { margin-left: 0; }
+}
+@media print { .sidebar, .topbar, #toast-root { display: none !important; } .app { display: block; } }

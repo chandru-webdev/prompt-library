@@ -1,0 +1,24 @@
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-bottom: 22px; }
+.stat { display: flex; align-items: center; gap: 14px; padding: 16px; color: var(--text); text-decoration: none; transition: border-color .15s var(--ease), transform .15s var(--ease); }
+.stat:hover { border-color: var(--accent); color: var(--text); transform: translateY(-1px); }
+.stat-icon { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); }
+.stat-num { font-size: 24px; font-weight: 650; line-height: 1.1; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.stat-label { font-size: 12.5px; color: var(--muted); }
+.dash-section { margin-bottom: 26px; }
+.dash-section > .panel-head { margin-bottom: 12px; }
+.dash-cols { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 18px; margin-bottom: 26px; }
+.bar-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+.bar-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; font-size: 13px; }
+.bar-row a { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-row .n { color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar-track { grid-column: 1 / -1; height: 5px; border-radius: 3px; background: var(--surface-3); overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width .4s var(--ease); }
+.mini-list { list-style: none; margin: 0; padding: 0; }
+.mini-list li { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+.mini-list li:last-child { border-bottom: 0; }
+.mini-list .mi-main { flex: 1; min-width: 0; }
+.mini-list .mi-title { display: block; font-weight: 550; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mini-list .mi-sub { font-size: 12px; color: var(--muted); }
+.hero-note { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; background: var(--accent-soft); border-radius: var(--radius); color: var(--text-2); margin-bottom: 22px; font-size: 13px; }
+.hero-note .icon { color: var(--accent); margin-top: 2px; }
+.hero-note p { margin: 0; }
